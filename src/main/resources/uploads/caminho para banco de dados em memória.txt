@@ -1,0 +1,11 @@
+create table CLIENTE (
+     id int not null primary key, 
+    nome varchar(50) not null,
+    idade int not null
+
+)
+
+insert into CLIENTE (ID, NOME, IDADE) values (123, 'Elisandra', 32)
+select * from CLIENTE
+
+http://localhost:8080/h2-console

@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: leitor-de-arquivos
+  datasource:
+    url: jdbc:mysql://localhost:3306/documentos
+    username: admin
+    password: admin
+  jpa:
+    hibernate:
+      ddl-auto: update

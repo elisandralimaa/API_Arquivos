@@ -1,0 +1,5 @@
+Campo,Tipo,Descrição
+id,int,Identificador único
+tipo,String,"Tipo de arquivo (XML, JSON, CSV, etc.)"
+caminho_do_arquivo,String,Caminho físico onde o arquivo foi salvo
+criadoEm,LocalDateTime,Data e hora de criação do registro

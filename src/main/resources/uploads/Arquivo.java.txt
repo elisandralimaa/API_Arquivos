@@ -1,0 +1,53 @@
+
+package com.leitor_de_arquivor.leitor_de_arquivos.model;
+
+import jakarta.persistence.*;
+
+import java.time.LocalDateTime;
+
+@Entity
+@Table(name = "armazenamento_de_arquivos")
+public class Arquivo {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private int id;
+    @Column(name = "tipo", length = 50)
+    private String tipo; // coluna que irá receber o Tipo de arquivo (XML, json, CSV.
+    @Column(name = "caminho_do_arquivo", length = 1000)
+    private String caminho_do_arquivo;
+    @Column(name = "criado_em", updatable = false)
+    private LocalDateTime criadoEm;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    public String getCaminho_do_arquivo() {
+        return caminho_do_arquivo;
+    }
+
+    public void setCaminho_do_arquivo(String caminho_do_arquivo) {
+        this.caminho_do_arquivo = caminho_do_arquivo;
+    }
+
+    public LocalDateTime getCriadoEm() {
+        return criadoEm;
+    }
+
+    public void setCriadoEm(LocalDateTime criadoEm) {
+        this.criadoEm = criadoEm;
+    }
+}

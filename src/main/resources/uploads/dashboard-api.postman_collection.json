@@ -1,0 +1,133 @@
+{
+	"info": {
+		"_postman_id": "d5ecf7a4-1214-4d0e-a1d3-21be6c01eec0",
+		"name": "dashboard-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42907959"
+	},
+	"item": [
+		{
+			"name": "Atendimento",
+			"item": [
+				{
+					"name": "Obter Atendimentos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/atendimento",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"atendimento"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obter por codigo de atendimento",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/atendimento/ATD_000045",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"atendimento",
+								"ATD_000045"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Criar Atendimento",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"codigoAtendimento\": \"ATD_000048\",\r\n  \"dadosMensagem\": \"{\\\"codigo_atendimento\\\":\\\"ATD-000001\\\",\\\"descricao_atendimento\\\":\\\"Descrição do atendimento 1\\\",\\\"cliente\\\":\\\"Innovative Systems\\\",\\\"solicitante\\\":\\\"Daniel Souza\\\",\\\"data_solicitacao\\\":\\\"2023-01-04 11:12:35\\\",\\\"servico\\\":\\\"Configuração de Rede\\\",\\\"atendente\\\":\\\"Roberto Almeida\\\",\\\"prioridade\\\":\\\"Média\\\",\\\"data_inicio_atendimento\\\":\\\"2023-01-04 20:12:35\\\",\\\"tempo_inicio_hrs\\\":9,\\\"data_resolucao\\\":\\\"2023-01-05 18:12:35\\\",\\\"tempo_resolucao_hrs\\\":22,\\\"data_fechamento\\\":\\\"2023-01-06 11:12:35\\\",\\\"tempo_fechamento_hrs\\\":48,\\\"nota\\\":\\\"Excelente\\\",\\\"interacoes\\\":10}\",\r\n  \"tipo\": \"json\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/atendimento",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"atendimento"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletar Atendimento",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/atendimento/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"atendimento",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Atendimento",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tipo\": \"XML\",\r\n    \"dadosMensagem\": \"<atendimento><codigo_atendimento>ATD-000001</codigo_atendimento><descricao_atendimento>Descrição do atendimento 1</descricao_atendimento><cliente>Innovative Systems</cliente><solicitante>Daniel Souza</solicitante><data_solicitacao>2023-01-04 11:12:35</data_solicitacao><servico>Configuração de Rede</servico><atendente>Roberto Almeida</atendente><prioridade>Média</prioridade><data_inicio_atendimento>2023-01-04 20:12:35</data_inicio_atendimento><tempo_inicio_hrs>9</tempo_inicio_hrs><data_resolucao>2023-01-05 18:12:35</data_resolucao><tempo_resolucao_hrs>22</tempo_resolucao_hrs><data_fechamento>2023-01-06 11:12:35</data_fechamento><tempo_fechamento_hrs>48</tempo_fechamento_hrs><nota>Excelente</nota><interacoes>10</interacoes></atendimento>\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/atendimento",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"atendimento"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
