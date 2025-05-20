@@ -1,10 +1,10 @@
 spring:
   application:
-    name: leitor-de-arquivos
+    name: API_Arquivos
   datasource:
     url: jdbc:mysql://localhost:3306/documentos
-    username: admin
-    password: admin
+    username: root
+    password: Teste@123
   jpa:
     hibernate:
       ddl-auto: update
