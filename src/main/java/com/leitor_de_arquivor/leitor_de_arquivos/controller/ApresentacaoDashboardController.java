@@ -2,7 +2,6 @@ package com.leitor_de_arquivor.leitor_de_arquivos.controller;
 
 import com.leitor_de_arquivor.leitor_de_arquivos.model.ApresentacaoDashboard;
 import com.leitor_de_arquivor.leitor_de_arquivos.repository.ApresentacaoDashboardRepository;
-import jakarta.persistence.Entity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -10,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.time.LocalDateTime;
 import java.util.List;
 
-@Entity
+
 @RestController
 @RequestMapping("/dashboard")
 public class ApresentacaoDashboardController {
@@ -22,7 +21,20 @@ public class ApresentacaoDashboardController {
     public ResponseEntity<ApresentacaoDashboard> salvarDashboard(@RequestBody ApresentacaoDashboard dashboard) {
         dashboard.setCriadoEm(LocalDateTime.now());
         ApresentacaoDashboard salvo = dashboardRepository.save(dashboard);
+
         return ResponseEntity.ok(salvo);
+
+    }
+
+    @PostMapping("/salvar-lista")
+    public ResponseEntity<ApresentacaoDashboard[]> salvarArrayDashboard(@RequestBody ApresentacaoDashboard[] dashboards) {
+        ApresentacaoDashboard[] returnDashboards = new ApresentacaoDashboard[dashboards.length];
+        for(int i = 0; i < dashboards.length; i++){
+            dashboards[i].setCriadoEm(LocalDateTime.now());
+            returnDashboards[i] = dashboardRepository.save(dashboards[i]);
+        }
+
+        return ResponseEntity.ok(returnDashboards);
     }
 
     @GetMapping("/listar")
